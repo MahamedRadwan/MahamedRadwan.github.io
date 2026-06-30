@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Gamal - Senior QA & Automation Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            background: #0f0f0f;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #64b5f6;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #90caf9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* SMOOTH SCROLL */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ====== NAVIGATION ====== */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 0;
+            border-bottom: 1px solid #2a2a2a;
+            margin-bottom: 60px;
+            animation: navFadeIn 0.8s ease-out;
+        }
+
+        @keyframes navFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #fff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            font-size: 14px;
+            color: #999;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #999;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #64b5f6;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #64b5f6;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cv-btn {
+            padding: 8px 16px;
+            background: transparent;
+            border: 1px solid #64b5f6;
+            color: #64b5f6;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        /* higher specificity to win over .nav-links a:hover */
+        .nav-links .nav-cv-btn:hover {
+            background: #64b5f6;
+            color: #000;
+            box-shadow: 0 0 20px rgba(100, 181, 246, 0.5);
+        }
+
+        /* suppress underline bar on the button */
+        .nav-cv-btn::after {
+            display: none !important;
+        }
+
+        /* ====== HERO SECTION ====== */
+        .hero {
+            margin-bottom: 80px;
+            animation: heroFadeIn 1s ease-out;
+        }
+
+        @keyframes heroFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.2;
+            color: #fff;
+        }
+
+        .hero .title {
+            font-size: 18px;
+            color: #64b5f6;
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+
+        .hero p {
+            font-size: 16px;
+            color: #b0b0b0;
+            max-width: 700px;
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 32px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            border: 1px solid #444;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(100, 181, 246, 0.1);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            left: 0;
+        }
+
+        .btn-primary {
+            background: #64b5f6;
+            color: #000;
+            border-color: #64b5f6;
+            box-shadow: 0 0 20px rgba(100, 181, 246, 0);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: #90caf9;
+            border-color: #90caf9;
+            color: #000;
+            box-shadow: 0 0 30px rgba(100, 181, 246, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #e0e0e0;
+            border-color: #444;
+        }
+
+        .btn-secondary:hover {
+            background: #1a1a1a;
+            border-color: #64b5f6;
+            color: #64b5f6;
+            box-shadow: 0 0 20px rgba(100, 181, 246, 0.3);
+        }
+
+        /* ====== SCROLL REVEAL SECTIONS ====== */
+        section {
+            opacity: 0;
+            transform: translateY(14px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+
+        section.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* SECTION TITLES */
+        .section-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #666;
+            margin-bottom: 24px;
+            margin-top: 60px;
+            animation: labelFadeIn 0.6s ease-out;
+        }
+
+        @keyframes labelFadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 32px;
+        }
+
+        /* ====== CARDS ====== */
+        .card {
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 8px;
+            padding: 32px;
+            margin-bottom: 20px;
+            transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateY(12px);
+            cursor: pointer;
+        }
+
+        /* Staggered card animations */
+        .card:nth-child(1) {
+            animation: cardSlideIn 0.7s ease-out 0.05s forwards;
+        }
+
+        .card:nth-child(2) {
+            animation: cardSlideIn 0.7s ease-out 0.15s forwards;
+        }
+
+        .card:nth-child(3) {
+            animation: cardSlideIn 0.7s ease-out 0.25s forwards;
+        }
+
+        .card:nth-child(4) {
+            animation: cardSlideIn 0.7s ease-out 0.35s forwards;
+        }
+
+        .card:nth-child(5) {
+            animation: cardSlideIn 0.7s ease-out 0.45s forwards;
+        }
+
+        .card:nth-child(n+6) {
+            animation: cardSlideIn 0.7s ease-out 0.55s forwards;
+        }
+
+        @keyframes cardSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card:hover {
+            border-color: #64b5f6;
+            background: #222;
+            transform: translateY(-3px) translateX(3px);
+            box-shadow: 0 8px 32px rgba(100, 181, 246, 0.12);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 4px;
+            transition: color 0.3s ease;
+        }
+
+        .card:hover .card-title {
+            color: #64b5f6;
+        }
+
+        .card-meta {
+            font-size: 13px;
+            color: #888;
+        }
+
+        .card-date {
+            font-size: 12px;
+            color: #666;
+            white-space: nowrap;
+        }
+
+        .card-description {
+            font-size: 14px;
+            color: #b0b0b0;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .card-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #2a2a2a;
+            color: #90caf9;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            background: #64b5f6;
+            color: #000;
+            transform: scale(1.05);
+        }
+
+        /* ====== SKILLS GRID ====== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .skill-category {
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 8px;
+            padding: 24px;
+            transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        /* Staggered skill card animations */
+        .skill-category:nth-child(1) {
+            animation: cardSlideIn 0.7s ease-out 0.05s forwards;
+        }
+
+        .skill-category:nth-child(2) {
+            animation: cardSlideIn 0.7s ease-out 0.15s forwards;
+        }
+
+        .skill-category:nth-child(3) {
+            animation: cardSlideIn 0.7s ease-out 0.25s forwards;
+        }
+
+        .skill-category:nth-child(4) {
+            animation: cardSlideIn 0.7s ease-out 0.35s forwards;
+        }
+
+        .skill-category:nth-child(5) {
+            animation: cardSlideIn 0.7s ease-out 0.45s forwards;
+        }
+
+        .skill-category:nth-child(n+6) {
+            animation: cardSlideIn 0.7s ease-out 0.55s forwards;
+        }
+
+        .skill-category:hover {
+            border-color: #64b5f6;
+            background: #222;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(100, 181, 246, 0.15);
+        }
+
+        .skill-category h3 {
+            font-size: 15px;
+            font-weight: 600;
+            color: #64b5f6;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .skill-category:hover h3 {
+            color: #90caf9;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            font-size: 14px;
+            color: #b0b0b0;
+            padding: 6px 0;
+            transition: all 0.3s ease;
+        }
+
+        .skill-category li:hover {
+            color: #64b5f6;
+            transform: translateX(4px);
+        }
+
+        .skill-category li:before {
+            content: "→ ";
+            color: #64b5f6;
+            font-weight: 600;
+            margin-right: 8px;
+        }
+
+        /* ====== CONTACT SECTION ====== */
+        .contact-links {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-top: 32px;
+            padding-top: 32px;
+            border-top: 1px solid #2a2a2a;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #b0b0b0;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 6px;
+        }
+
+        .contact-link:hover {
+            background: rgba(100, 181, 246, 0.1);
+            color: #64b5f6;
+            transform: translateY(-2px);
+        }
+
+        .contact-link a {
+            color: #64b5f6;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover a {
+            color: #90caf9;
+        }
+
+        /* ====== FOOTER ====== */
+        footer {
+            margin-top: 100px;
+            padding: 40px 0;
+            border-top: 1px solid #2a2a2a;
+            text-align: center;
+            color: #666;
+            font-size: 13px;
+            animation: footerFadeIn 1.2s ease-out;
+        }
+
+        @keyframes footerFadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* ====== RESPONSIVE ====== */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 24px;
+                margin-bottom: 40px;
+            }
+
+            .nav-links {
+                gap: 20px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .card {
+                padding: 24px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Reduce motion for accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- NAVIGATION -->
+        <nav>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+                <a href="#cv" class="nav-cv-btn">Resume</a>
+            </div>
+        </nav>
+
+        <!-- HERO SECTION -->
+        <section class="hero" id="about">
+            <h1>Mohamed Gamal Ali Radwan</h1>
+            <p class="title">Senior QA & Automation Engineer</p>
+            <p>Designing robust automation frameworks and CI/CD pipelines. SDET specialist with 3+ years of experience
+                building scalable test infrastructure for web and mobile applications.</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                <a href="#projects" class="btn btn-secondary">View Projects</a>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE SECTION -->
+        <section id="experience">
+            <div class="section-label">Professional Journey</div>
+            <h2 class="section-title">Experience</h2>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Senior QA & Automation Engineer</div>
+                        <div class="card-meta">Vodafone Egypt</div>
+                    </div>
+                    <div class="card-date">Apr 2025 — Present</div>
+                </div>
+                <div class="card-description">
+                    Leading QA activities across multiple squads with focus on test automation excellence. Designing
+                    end-to-end test strategies, mentoring junior engineers, and improving CI/CD integration. Early
+                    adopter of GitHub Copilot Enterprise for testing innovation.
+                </div>
+                <div class="card-tags">
+                    <span class="tag">Selenium</span>
+                    <span class="tag">Java</span>
+                    <span class="tag">TestNG</span>
+                    <span class="tag">Jenkins</span>
+                    <span class="tag">Leadership</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">QA & Automation Engineer</div>
+                        <div class="card-meta">Vodafone Egypt</div>
+                    </div>
+                    <div class="card-date">Feb 2024 — Apr 2025</div>
+                </div>
+                <div class="card-description">
+                    Designed and executed comprehensive manual and automated test cases. Built automation frameworks
+                    using Selenium and Java. Contributed to feature documentation and participated in Agile ceremonies
+                    across cross-functional teams.
+                </div>
+                <div class="card-tags">
+                    <span class="tag">Selenium</span>
+                    <span class="tag">Java</span>
+                    <span class="tag">API Testing</span>
+                    <span class="tag">Agile</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">QA Engineer</div>
+                        <div class="card-meta">Enable Tech</div>
+                    </div>
+                    <div class="card-date">Aug 2023 — Jan 2024</div>
+                </div>
+                <div class="card-description">
+                    Designed and executed manual test cases for web applications. Performed API automation testing using
+                    ShaftEngine. Investigated bugs and documented defects with clarity and precision.
+                </div>
+                <div class="card-tags">
+                    <span class="tag">Manual Testing</span>
+                    <span class="tag">API Testing</span>
+                    <span class="tag">ShaftEngine</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Frontend Developer</div>
+                        <div class="card-meta">Digihive Solutions</div>
+                    </div>
+                    <div class="card-date">Mar 2022 — Jun 2023</div>
+                </div>
+                <div class="card-description">
+                    Converted Figma designs into responsive web applications using HTML, SASS, and JavaScript. Optimized
+                    performance, SEO, and cross-browser compatibility while building reusable components.
+                </div>
+                <div class="card-tags">
+                    <span class="tag">HTML/CSS</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">Responsive Design</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects">
+            <div class="section-label">Active Projects</div>
+            <h2 class="section-title">Featured Work</h2>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Appium Mobile Automation Framework</div>
+                    </div>
+                </div>
+                <div class="card-description">
+                    Building a comprehensive mobile automation framework using Appium with Page Object Model design
+                    pattern. Integrating TestNG for test execution and Allure Reports for detailed reporting and metrics
+                    visualization.
+                </div>
+                <div class="card-tags">
+                    <span class="tag">Appium</span>
+                    <span class="tag">Page Object Model</span>
+                    <span class="tag">TestNG</span>
+                    <span class="tag">Allure Reports</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">API Automation Framework Enhancement</div>
+                    </div>
+                </div>
+                <div class="card-description">
+                    Enhancing Java-based API automation framework with advanced authentication methods. Adding support
+                    for OAuth 2.0, JWT, and Basic Auth. Implementing data-driven testing with CSV/JSON and advanced
+                    reporting with Allure and Extent Reports.
+                </div>
+                <div class="card-tags">
+                    <span class="tag">Rest Assured</span>
+                    <span class="tag">OAuth 2.0</span>
+                    <span class="tag">JWT</span>
+                    <span class="tag">Data-Driven Testing</span>
+                    <span class="tag">Allure Reports</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">CI/CD Integration via GitHub Actions</div>
+                    </div>
+                </div>
+                <div class="card-description">
+                    Building automated CI/CD pipelines using GitHub Actions for continuous integration and deployment.
+                    Integrating test execution, report generation, and deployment automation into development workflows.
+                </div>
+                <div class="card-tags">
+                    <span class="tag">GitHub Actions</span>
+                    <span class="tag">CI/CD</span>
+                    <span class="tag">Automation</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">AI-Powered Testing Agent</div>
+                    </div>
+                </div>
+                <div class="card-description">
+                    Developing an AI testing agent using Claude/Copilot APIs to analyze DOM structure, identify UI
+                    elements, and generate E2E test scenarios. Automating test case generation with Playwright or
+                    Selenium integration.
+                </div>
+                <div class="card-tags">
+                    <span class="tag">AI/ML</span>
+                    <span class="tag">Claude APIs</span>
+                    <span class="tag">Playwright</span>
+                    <span class="tag">Test Automation</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills">
+            <div class="section-label">Technical Arsenal</div>
+            <h2 class="section-title">Skills & Tools</h2>
+
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Test Automation</h3>
+                    <ul>
+                        <li>Selenium WebDriver</li>
+                        <li>Appium (Mobile)</li>
+                        <li>Playwright</li>
+                        <li>Robot Framework</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>API & Database</h3>
+                    <ul>
+                        <li>Rest Assured</li>
+                        <li>Postman</li>
+                        <li>API Testing & Validation</li>
+                        <li>ShaftEngine</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <ul>
+                        <li>Java</li>
+                        <li>Python</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Testing Frameworks</h3>
+                    <ul>
+                        <li>TestNG</li>
+                        <li>Cucumber/BDD</li>
+                        <li>Allure Reports</li>
+                        <li>Extent Reports</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>CI/CD & DevOps</h3>
+                    <ul>
+                        <li>GitHub Actions</li>
+                        <li>Jenkins Pipelines</li>
+                        <li>Docker Basics</li>
+                        <li>Git & GitHub</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Security & Auth</h3>
+                    <ul>
+                        <li>OAuth 2.0</li>
+                        <li>JWT Authentication</li>
+                        <li>Basic Auth</li>
+                        <li>HTTPS/TLS</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Methodologies</h3>
+                    <ul>
+                        <li>Agile/Scrum</li>
+                        <li>Test-Driven Development</li>
+                        <li>Continuous Integration</li>
+                        <li>ISTQB Practices</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Soft Skills</h3>
+                    <ul>
+                        <li>Team Leadership</li>
+                        <li>Mentoring</li>
+                        <li>Cross-functional Collaboration</li>
+                        <li>Problem Solving</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION & CERTIFICATIONS -->
+        <section>
+            <div class="section-label">Credentials</div>
+            <h2 class="section-title">Education & Certifications</h2>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Bachelor of Software Engineering (Very Good)</div>
+                        <div class="card-meta">Helwan University</div>
+                    </div>
+                    <div class="card-date">2017 — 2021</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">ISTQB Certified Tester Foundation Level (CTFL)</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CV SECTION -->
+        <section id="cv">
+            <div class="section-label">Quick Access</div>
+            <h2 class="section-title">Download My Resume</h2>
+            <p style="font-size: 16px; color: #b0b0b0; max-width: 600px; line-height: 1.7; margin-bottom: 32px;">
+                Get a comprehensive overview of my professional background, experience, and qualifications .
+            </p>
+
+            <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+                <a href="cv.pdf" download="Mohamed_Gamal_CV.pdf" class="btn btn-primary"
+                    style="display: inline-flex; align-items: center; gap: 8px;">
+                    <span>📄</span> Download Resume (PDF)
+                </a>
+            </div>
+
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact">
+            <div class="section-label">Let's Connect</div>
+            <h2 class="section-title">Get In Touch</h2>
+            <p style="font-size: 16px; color: #b0b0b0; max-width: 600px; line-height: 1.7; margin-bottom: 32px;">
+                Open to senior QA and test automation roles, consulting opportunities, or conversations about test
+                architecture and quality assurance. Let's build something great together.
+            </p>
+
+            <div class="contact-links">
+                <div class="contact-link">
+                    <span>📧</span>
+                    <a href="mailto:mahamed_gamal86@yahoo.com">mahamed_gamal86@yahoo.com</a>
+                </div>
+                <div class="contact-link">
+                    <span>📱</span>
+                    <a href="tel:+201063284253">+20 106 328 4253</a>
+                </div>
+                <div class="contact-link">
+                    <span>💼</span>
+                    <a href="https://linkedin.com/in/mohamed-gamal-61491b188/" target="_blank">LinkedIn</a>
+                </div>
+                <div class="contact-link">
+                    <span>🐙</span>
+                    <a href="https://github.com/MahamedRadwan" target="_blank">GitHub</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>© 2025 Mohamed Gamal Ali Radwan. Designed & built for quality assurance excellence.</p>
+        </footer>
+    </div>
+
+    <!-- SCROLL REVEAL JAVASCRIPT -->
+    <script>
+        // Scroll Reveal: Fade in sections as they come into view
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Hero section shows immediately
+        document.querySelector('.hero').classList.add('reveal');
+    </script>
+</body>
+
+</html>
